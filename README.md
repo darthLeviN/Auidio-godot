@@ -10,7 +10,7 @@ Cd into Auidio-godot then run scons. the resulting binaries will be copied to go
 Auidio-godot>scons
 ```
 
-Finally you can import godot-project/project.godot into godot 4.
+Finally you can import godot-project/project.godot into godot 4. **Then make sure you reload the default bus before you save anything.**
 
 Notes : 
 - godot-cpp is in alpha stage and you might want to checkout a specific commit of it.
