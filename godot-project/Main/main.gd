@@ -12,6 +12,8 @@ extends Node
 func _ready():
 	tgn.current_time = 0.0
 	tgn.queue_redraw()
+	show_octaves_cb.button_pressed = true
+	show_notes_cb.button_pressed = true
 	
 	clarity_thr_slider.value = 0.2
 

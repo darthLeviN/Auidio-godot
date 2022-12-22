@@ -1,8 +1,8 @@
 [gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://cwmck0p7f1mb4"]
 
-[sub_resource type="AudioEffectPitchAnalyzer" id="AudioEffectPitchAnalyzer_ladsc"]
-clarity_threshold = 2.19978e-34
+[sub_resource type="AudioEffectPitchAnalyzer" id="AudioEffectPitchAnalyzer_bs0r1"]
 resource_name = "PitchAnalyzer"
+clarity_threshold = 1.96182e-44
 
 [resource]
 bus/1/name = &"Record"
@@ -11,5 +11,5 @@ bus/1/mute = true
 bus/1/bypass_fx = false
 bus/1/volume_db = 0.0
 bus/1/send = &"Master"
-bus/1/effect/0/effect = SubResource("AudioEffectPitchAnalyzer_ladsc")
+bus/1/effect/0/effect = SubResource("AudioEffectPitchAnalyzer_bs0r1")
 bus/1/effect/0/enabled = true

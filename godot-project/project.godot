@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Control",
+"class": &"booo",
+"language": &"GDScript",
+"path": "res://tmp/ts.gd"
+}]
+_global_script_class_icons={
+"booo": ""
+}
+
 [application]
 
 config/name="Auidio"
@@ -15,6 +25,10 @@ run/main_scene="res://Main/main.tscn"
 config/features=PackedStringArray("4.0")
 run/max_fps=60
 config/icon="res://icon.png"
+
+[audio]
+
+driver/enable_input=true
 
 [autoload]
 
@@ -35,3 +49,8 @@ paths=["res://example.gdextension"]
 
 anti_aliasing/quality/msaa_2d=1
 environment/defaults/default_environment="res://default_env.tres"
+
+[threading]
+
+worker_pool/max_threads=0
+worker_pool/use_system_threads_for_low_priority_tasks=false

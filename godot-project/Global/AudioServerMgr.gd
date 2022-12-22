@@ -14,6 +14,8 @@ var lock_audio_server := true
 func _ready():
 	AudioServer.lock()
 	record_bus = AudioServer.get_bus_index("Record")
+#	bus_layout.set("bus/%d/effect/%d/effect" % 
+#		[record_bus, record_peaks_effect], naf)
 	AudioServer.unlock()
 
 # lock AudioServer before calling this
