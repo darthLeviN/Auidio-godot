@@ -42,4 +42,4 @@ If you get a invalid platform error, you will need to source the emscripten file
 
 After compiling the web exports, they will be available as .zip files in the 'bin' foolder.
 
-There are two ways to do this. either the 'Custom Template' option in the web export page. or rename them and directly copying them in the export templates folder. Location for this folder and the required names will be shown in red at the bottom of the Export window in godot when you have the 'Web' Export selected.
+Then you will need to use the export templates in the godot engine. There are two ways to do this. either the 'Custom Template' option in the web export page. or rename them and directly copying them in the export templates folder. Location for this folder and the required names will be shown in red at the bottom of the Export window in godot when you have the 'Web' Export selected.
