@@ -1,9 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dmx2xuigcpvt4"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_kvqbk"]
+[ext_resource type="AudioStream" uid="uid://bwursmlilvh66" path="res://TestAssets/sin_1000Hz_-3dBFS_3s.wav" id="2_ua62h"]
 [ext_resource type="PackedScene" uid="uid://tsojatrwr2oa" path="res://UI/TemporalGraph/TemporalGraphPack.tscn" id="3_a0wpj"]
-
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_a4p05"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvnq8"]
 bg_color = Color(0.32549, 0.32549, 0.32549, 1)
@@ -33,7 +32,7 @@ offset_bottom = 29.0
 text = "Click me!"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamMicrophone_a4p05")
+stream = ExtResource("2_ua62h")
 autoplay = true
 bus = &"Record"
 
