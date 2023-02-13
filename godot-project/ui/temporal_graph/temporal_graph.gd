@@ -6,26 +6,26 @@ extends Control
 # TODO : make this a circular buffer if more performance is needed.
 # FIXME : sadly at the time PackedVector3Array has no bsearch_custom function
 #   implemented. change this after it's implemented.
-var Points : Array = []
+var Points: Array = []
 # clone of above but pre computed to draw notes.
-var notePoints : Array = []
+var notePoints: Array = []
 
-var current_time : float = 0.0 :
+var current_time: float = 0.0 :
 	set(value):
 		if current_time != value:
 			current_time = value
 			queue_redraw()
-@export var time_length : float = 10.0
-@export var fr_line_width : float = 2.0
-@export var fr_line_color : Color = Color(0.3,0.3,1.0,0.5)
-@export var mn_line_width : float = 4.0
-@export var mn_line_color : Color = Color(0.3,0.3,1.0,1.0)
-@export var upper_frequency : float = 8000.0
-@export_range(20.0,22000) var lower_frequency : float = 20.0
-@export_range(1000, 20000) var flush_limit : int = 1000
-@export var clarity_threshold : float = 0.05
-@export var show_octaves : bool = true
-@export var show_notes : bool = true
+@export var time_length: float = 10.0
+@export var fr_line_width: float = 2.0
+@export var fr_line_color: Color = Color(0.3,0.3,1.0,0.5)
+@export var mn_line_width: float = 4.0
+@export var mn_line_color: Color = Color(0.3,0.3,1.0,1.0)
+@export var upper_frequency: float = 8000.0
+@export_range(20.0,22000) var lower_frequency: float = 20.0
+@export_range(1000, 20000) var flush_limit: int = 1000
+@export var clarity_threshold: float = 0.05
+@export var show_octaves: bool = true
+@export var show_notes: bool = true
 
 const mn_lower_bound := 15.89
 const mn_C := 16.351
@@ -42,17 +42,22 @@ const mn_Bb := 29.135
 const mn_B := 30.868
 const mn_uppwer_bound := 31.785
 
+
 func _init():
 	current_time = Time.get_ticks_msec()*1000.0
+
 
 func _ready():
 	pass # Replace with function body.
 
+
 func pcmp(first : Vector3, second : Vector3) -> bool:
 	return first.x < second.x
 
+
 func add_new_point2(p : Vector2):
 	add_new_point3(Vector3(current_time, p.x, p.y))
+
 
 func get_note_point(frpoint : Vector3) -> Vector3:
 	var fr : float = frpoint.y
@@ -62,6 +67,7 @@ func get_note_point(frpoint : Vector3) -> Vector3:
 		while(fr > mn_uppwer_bound):
 			fr /= 2.0
 		return Vector3(frpoint.x, fr, frpoint.z)
+
 
 func add_new_point3(newp : Vector3):
 	if(Points.size() == 0):
@@ -77,6 +83,7 @@ func add_new_point3(newp : Vector3):
 		Points.insert(iidx, newp)
 		notePoints.insert(iidx, get_note_point(newp))
 
+
 # keeps only one out of range point and flushes the rest.
 func _flush_out_of_range():
 	var etime := current_time - time_length
@@ -91,6 +98,7 @@ func _flush_out_of_range():
 	if Points[fidx].x > etime && fidx > 1:
 		Points = Points.slice(fidx - 2, Points.size())
 		notePoints = notePoints.slice(fidx - 2, notePoints.size())
+
 
 func _draw():
 	var etime := current_time - time_length

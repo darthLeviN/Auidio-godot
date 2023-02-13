@@ -1,13 +1,13 @@
 @tool
 extends PanelContainer
 
-@export var upper_frequency : float = 8000.0
-@export_range(20.0,22000) var lower_frequency : float = 20.0
-@export var fr_label_color : Color = Color(0.0,0.0,0.0,0.5)
-@export var mn_label_color : Color = Color(0.0,0.0,0.0,1.0)
-@export var note_transform : bool = false
-@export var show_octaves : bool = true
-@export var show_notes : bool = true
+@export var upper_frequency: float = 8000.0
+@export_range(20.0,22000) var lower_frequency: float = 20.0
+@export var fr_label_color: Color = Color(0.0,0.0,0.0,0.5)
+@export var mn_label_color: Color = Color(0.0,0.0,0.0,1.0)
+@export var note_transform: bool = false
+@export var show_octaves: bool = true
+@export var show_notes: bool = true
 
 const mn_lower_bound := 15.89
 const mn_C := 16.351
@@ -25,21 +25,21 @@ const mn_B := 30.868
 const mn_uppwer_bound := 31.785
 
 var mn_notes := {
-	"C" : mn_C,
-	"Db" : mn_Db,
-	"D" : mn_D,
-	"Eb" : mn_Eb,
-	"E" : mn_E,
-	"F" : mn_F,
-	"Gb" : mn_Gb,
-	"G" : mn_G,
-	"Ab" : mn_Ab,
-	"A" : mn_A,
-	"Bb" : mn_Bb,
-	"B" : mn_B,
+	"C": mn_C,
+	"Db": mn_Db,
+	"D": mn_D,
+	"Eb": mn_Eb,
+	"E": mn_E,
+	"F": mn_F,
+	"Gb": mn_Gb,
+	"G": mn_G,
+	"Ab": mn_Ab,
+	"A": mn_A,
+	"Bb": mn_Bb,
+	"B": mn_B,
 }
 
-func create_fr_label(tick : float) -> String:
+func create_fr_label(tick: float) -> String:
 	return "%d" % tick
 
 func _draw():
@@ -62,7 +62,7 @@ func _draw():
 	if(show_notes):
 		var sratio = size.y/(mn_uppwer_bound - mn_lower_bound)
 		for n in mn_notes:
-			var np : float = mn_notes[n]
+			var np: float = mn_notes[n]
 			var rvtpos = size.y - (np - mn_lower_bound)*sratio
 			draw_string(dfont, Vector2(5.0, rvtpos), n,
 				HORIZONTAL_ALIGNMENT_LEFT, -1, 16, mn_label_color)

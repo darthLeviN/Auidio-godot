@@ -9,6 +9,7 @@ func _ready():
 	temporal_graph.current_time = 0.0
 	temporal_graph.queue_redraw()
 
+
 func _process(delta):
 	temporal_graph.current_time += delta
 	var fv = frequency_slider.value*temporal_graph.upper_frequency

@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bubdds51hjn6k"]
+[gd_scene load_steps=5 format=3 uid="uid://dftjha4ffaged"]
 
-[ext_resource type="Script" path="res://UI/TemporalGraph/TemporalFrequencyGrid.gd" id="1_c1i4u"]
-[ext_resource type="Script" path="res://UI/TemporalGraph/Grid.gd" id="2_q56ck"]
-[ext_resource type="Script" path="res://UI/TemporalGraph/Ruler.gd" id="3_3bidq"]
+[ext_resource type="Script" path="res://ui/temporal_graph/temporal_frequency_gird.gd" id="1_c1i4u"]
+[ext_resource type="Script" path="res://ui/temporal_graph/gird.gd" id="2_q56ck"]
+[ext_resource type="Script" path="res://ui/temporal_graph/ruler.gd" id="3_3bidq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmm2v"]
 bg_color = Color(0.972549, 0.972549, 0.972549, 1)
@@ -17,7 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_c1i4u")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -25,21 +25,15 @@ grow_vertical = 2
 
 [node name="Grid" type="PanelContainer" parent="HBoxContainer"]
 unique_name_in_owner = true
-offset_right = 1816.0
-offset_bottom = 1080.0
+layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_mmm2v")
 script = ExtResource("2_q56ck")
-tick0_step = 5000.0
-show_notes = null
-show_octaves = null
 
 [node name="Ruler" type="PanelContainer" parent="HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
-offset_left = 1820.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 2
 script = ExtResource("3_3bidq")
-show_octaves = null
-show_notes = null
+fr_label_color = Color(1, 1, 1, 0.501961)
+mn_label_color = Color(1, 1, 1, 1)

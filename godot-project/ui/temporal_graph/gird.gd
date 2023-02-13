@@ -1,18 +1,18 @@
 @tool
 extends PanelContainer
 
-@export var upper_frequency : float = 8000.0
-@export var lower_frequency : float = 20.0
-@export var tick0_step : float = 5000
+@export var upper_frequency: float = 8000.0
+@export var lower_frequency: float = 20.0
+@export var tick0_step: float = 5000
 
-@export var fr_tick_width : float = 1.0
-@export var fr_tick_color : Color = Color(0.5,0.5,0.5, 0.5)
+@export var fr_tick_width: float = 1.0
+@export var fr_tick_color: Color = Color(0.5,0.5,0.5, 0.5)
 
-@export var note_tick_width : float = 2.0
-@export var note_tick_color : Color = Color(0.5,0.5,0.5, 1.0)
+@export var note_tick_width: float = 2.0
+@export var note_tick_color: Color = Color(0.5,0.5,0.5, 1.0)
 
-@export var show_notes : bool = true
-@export var show_octaves : bool = true
+@export var show_notes: bool = true
+@export var show_octaves: bool = true
 
 const mn_lower_bound := 15.89
 const mn_C := 16.351
@@ -30,19 +30,20 @@ const mn_B := 30.868
 const mn_uppwer_bound := 31.785
 
 var mn_notes := {
-	"C" : mn_C,
-	"Db" : mn_Db,
-	"D" : mn_D,
-	"Eb" : mn_Eb,
-	"E" : mn_E,
-	"F" : mn_F,
-	"Gb" : mn_Gb,
-	"G" : mn_G,
-	"Ab" : mn_Ab,
-	"A" : mn_A,
-	"Bb" : mn_Bb,
-	"B" : mn_B,
+	"C": mn_C,
+	"Db": mn_Db,
+	"D": mn_D,
+	"Eb": mn_Eb,
+	"E": mn_E,
+	"F": mn_F,
+	"Gb": mn_Gb,
+	"G": mn_G,
+	"Ab": mn_Ab,
+	"A": mn_A,
+	"Bb": mn_Bb,
+	"B": mn_B,
 }
+
 
 func _draw():
 	
@@ -64,7 +65,7 @@ func _draw():
 	if(show_notes):
 		var sratio = size.y/(mn_uppwer_bound - mn_lower_bound)
 		for n in mn_notes:
-			var np : float = mn_notes[n]
+			var np: float = mn_notes[n]
 			var rvtpos = size.y - (np - mn_lower_bound)*sratio
 			var p1 = Vector2(0, rvtpos)
 			var p2 = Vector2(size.x, rvtpos)

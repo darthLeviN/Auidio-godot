@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhjixnxhvxthx"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://UI/TemporalGraph/TemporalGraph.gd" id="1_8ceim"]
+[ext_resource type="Script" path="res://ui/temporal_graph/temporal_graph.gd" id="1_8ceim"]
 
 [node name="TemporalGraph" type="Control"]
 layout_mode = 3

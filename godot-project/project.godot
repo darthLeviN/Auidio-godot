@@ -8,22 +8,12 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Control",
-"class": &"booo",
-"language": &"GDScript",
-"path": "res://tmp/ts.gd"
-}]
-_global_script_class_icons={
-"booo": ""
-}
-
 [application]
 
 config/name="Auidio"
-run/main_scene="res://Main/main.tscn"
+run/main_scene="res://main/main.tscn"
 config/features=PackedStringArray("4.0")
-run/max_fps=60
+run/max_fps=512
 config/icon="res://icon.png"
 
 [audio]
@@ -32,7 +22,8 @@ driver/enable_input=true
 
 [autoload]
 
-AudioServerMgr="*res://Global/AudioServerMgr.gd"
+AudioServerMgr="*res://global/audio_server_mgr.gd"
+AudioStreams="*res://global/audio_streams.gd"
 
 [display]
 
@@ -47,7 +38,6 @@ paths=["res://example.gdextension"]
 
 [rendering]
 
-anti_aliasing/quality/msaa_2d=1
 environment/defaults/default_environment="res://default_env.tres"
 
 [threading]
